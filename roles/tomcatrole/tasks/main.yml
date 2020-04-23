@@ -1,0 +1,11 @@
+---
+ - name: installing "{{pkg}}"
+   apt:
+           name: "{{pkg}}"
+           state: "{{state1}}"
+   notify: restarting "{{pkg}}"
+ - name: deploying "{{pkg}}"
+   copy:
+           src: "{{src}}"
+           dest: "{{dest}}"
+   notify: restarting  "{{pkg}}"       
